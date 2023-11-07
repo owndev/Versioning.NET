@@ -1,0 +1,4 @@
+#!/bin/sh
+echo
+exec powershell -NoProfile -ExecutionPolicy Bypass -File ".\.git\hooks\PostCommitEdit.ps1"
+exit
