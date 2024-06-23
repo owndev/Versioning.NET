@@ -5,7 +5,7 @@ $commitPath = ".\.git\COMMIT_EDITMSG" #Pfad
 #Pfad
 $readmePath = ".\README.md" #Pfad zur README.md
 $releasenotesPath = ".\releasenotes.txt" #Pfad zur releasenotes.txt
-$fullProjectPath = (Get-ChildItem -Include *.csproj -Recurse | Select-Object FullName).FullName #Projektdatei suchen
+$fullProjectPath = (Get-ChildItem -Include *.csproj -Recurse | Where-Object { $_.Name -notmatch 'Client.csproj' } | Select-Object FullName).FullName
 
 [xml]$xml = Get-Content $fullProjectPath #File öffnen
 

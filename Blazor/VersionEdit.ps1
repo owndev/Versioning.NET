@@ -1,5 +1,5 @@
 #Pfad
-$fullProjectPath = (Get-ChildItem -Include *.csproj -Recurse | Select-Object FullName).FullName #Projektdatei suchen
+$fullProjectPath = (Get-ChildItem -Include *.csproj -Recurse | Where-Object { $_.Name -notmatch 'Client.csproj' } | Select-Object FullName).FullName
 
 #.csproj
 if (Test-Path $fullProjectPath) 
