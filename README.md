@@ -1,15 +1,27 @@
 # Introducing
-This project is for automatic versioning of Visual Studio (WPF, WinUI and Xamarin Forms) projects.
-All GitHooks scripts run the PowerShell scripts that contain the functions.
+This project is for automatic versioning of .NET projects including WinUI, .NET MAUI, Blazor, Console, WPF and Xamarin Forms. All GitHooks scripts run PowerShell scripts that contain the necessary functions.
 
-# Get started
-- Paste all files into GitHook's folder (\.git\hooks).
-- If versions should be visible in README.md -> add chapter ***Buildversion*** (In Markdown -> # Buildversion)
-- Add a find.me File to the Project Folder (it's contain a File with .csproj) 
-  - For **Xamarin Forms** add another find.me.android in Project Folder of the Android Project 
-  - For **Uno Platfrom** add another find.me.mobile in Project Mobile Folder of the Ubo Platfrom Project.
+# Get Started
+- Paste all files into the GitHook's folder (`\.git\hooks`).
+- If you want versions to be visible in `README.md`, add the chapter ***Buildversion*** (In Markdown -> `# Buildversion`).
 
-## And now for each commit:
-- The version number written in the commit
-- A releasenotes.txt is written (only if ***Buildversion*** in README.md | otherwise only current commit is written). This file is written as a markdown table.
-- If ***Buildversion*** in README.md then the commit is written as a markdown table under ***Buildversion***
+## For WinUI and Xamarin Forms:
+- Add a `find.me` file to the project folder (this folder should contain a `.csproj` file).
+  - For **Xamarin Forms**, add another `find.me.android` in the project folder of the Android project.
+
+## And Now for Each Commit:
+- The version number is included in the commit message.
+- A `releasenotes.txt` is written (only if ***Buildversion*** is in `README.md`; otherwise, only the current commit is written). This file is written as a markdown table.
+- If ***Buildversion*** is in `README.md`, then the commit is written as a markdown table under ***Buildversion***.
+
+## Supported Projects
+- **WinUI**
+  - Add a `find.me` file to the project folder.
+- **.NET MAUI**
+- **Blazor**
+  - Created for Blazer Web App with Server and Client
+- **Console**
+- **WPF**
+- **Xamarin Forms**
+  - Add a `find.me` file to the project folder.
+  - Add a `find.me.android` file in the Android project folder.
